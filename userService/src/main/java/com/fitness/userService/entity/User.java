@@ -1,6 +1,6 @@
 package com.fitness.userService.entity;
 
-import enums.UserRole;
+import com.fitness.userService.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
-import java.util.UUID;
 
 @Entity
 @Table(name = "users")
