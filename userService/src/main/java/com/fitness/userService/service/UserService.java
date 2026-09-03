@@ -8,6 +8,7 @@ import com.fitness.userService.error.ResourceNotFoundException;
 import com.fitness.userService.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.Nullable;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UserService {
     private final  UserRepository userRepository;
     private final ModelMapper modelMapper;
@@ -72,5 +74,8 @@ public class UserService {
     }
 
 
-
+    public  Boolean existByUserId(String userId) {
+        log.info("calling user validation api for userId:{}",userId);
+        return userRepository.existsById(userId);
+    }
 }
